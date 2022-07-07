@@ -2,7 +2,7 @@
 <html lang="{{ .Site.LanguageCode }}">
   <head>
     {{ partial "meta.html" . }}
-    <title>{{ .Title }} | {{ .Site.Title }}</title>
+    <title>{{ .Title }} | {{ if .IsHome }} {{ .Site.Params.Subtitle }} {{ else }} {{ .Site.Title }}  {{ end }}</title>
     {{ partial "css.html" . }}
   </head>
   <body>
