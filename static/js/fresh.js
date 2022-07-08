@@ -1,20 +1,4 @@
 $(document).ready(function () {
-  // dropdown active
-  document.querySelectorAll(".navbar-dropdown .navbar-item").forEach((item) => {
-    if (
-      window.location.pathname.replace(/\/+$/, "") ===
-      item.getAttribute("href").replace(/\/+$/, "")
-    ) {
-      item.classList.toggle("has-text-link");
-
-      try {
-        item.parentElement.parentElement
-          .querySelectorAll(".navbar-link")[0]
-          .classList.toggle("has-text-link");
-      } catch (err) {}
-    }
-  });
-
   //Preloader
   $(window).on("load", function () {
     // makes sure the whole site is loaded
@@ -167,7 +151,30 @@ $(document).ready(function () {
       }
     });
 
-  $("form").submit(function (e) {
-    e.preventDefault();
+  $(".navbar-item.has-dropdown").click(function (e) {
+    if ($(".navbar-burger").is(":visible")) {
+      $(this).toggleClass("is-active");
+    }
+  });
+  $(".navbar-item > .navbar-link").click(function (e) {
+    if ($(".navbar-burger").is(":visible")) {
+      e.preventDefault();
+    }
+  });
+
+  // dropdown active
+  document.querySelectorAll(".navbar-dropdown .navbar-item").forEach((item) => {
+    if (
+      window.location.pathname.replace(/\/+$/, "") ===
+      item.getAttribute("href").replace(/\/+$/, "")
+    ) {
+      item.classList.toggle("has-text-link");
+
+      try {
+        item.parentElement.parentElement
+          .querySelectorAll(".navbar-link")[0]
+          .classList.toggle("has-text-link");
+      } catch (err) {}
+    }
   });
 });

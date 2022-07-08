@@ -18,3 +18,21 @@ Main SCSS file / Fresh
 @import 'partials/responsive';
 @import 'partials/utils';
 
+
+// dropdown mobile open
+.navbar-item {
+  &.has-dropdown {
+    .navbar-dropdown {
+      display: none;
+    }
+    &.is-active {
+      .navbar-dropdown {
+        display: block;
+      }
+    }
+  }
+}
+
+.fa-2xl {
+  font-size: 2em!important;
+}

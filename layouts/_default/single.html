@@ -2,7 +2,7 @@
 <html lang="{{ .Site.LanguageCode }}">
   <head>
     {{ partial "meta.html" . }}
-    <title>{{ .Title }} | {{ .Site.Title }}</title>
+    <title>{{ .Title }} | {{ if .IsHome }} {{ .Site.Params.Subtitle }} {{ else }} {{ .Site.Title }}  {{ end }}</title>
     {{ partial "css.html" . }}
   </head>
   <body>
@@ -11,13 +11,22 @@
       <div id="status"></div>
     </div>
 
-    {{ block "main" . }} {{ partial "single/single.html" . }} {{ if
-    .Params.include_footer }} {{ partial "footer.html" . }} {{ end }}
+    {{ block "main" . }}
+      {{ partial "single/single.html" . }} 
+      {{ if.Params.include_footer }} 
+        {{ partial "footer.html" . }}
+      {{ end }}
 
-    <!-- Back To Top Button -->
-    <div id="backtotop"><a href="#"></a></div>
+      <!-- Back To Top Button -->
+      <div id="backtotop"><a href="#"></a></div>
 
-    {{ if .Params.sidebar }} {{ partial "single/sidebar.html" . }} {{ end }} {{
-    end }} {{ partial "javascript.html" . }}
+      {{ if .Params.sidebar }}
+        {{ partial "single/sidebar.html" . }}
+      {{ end }}
+
+    {{ end }}
+    {{ partial "css-font.html" . }}
+    {{ partial "javascript.html" . }}
+    
   </body>
 </html>
