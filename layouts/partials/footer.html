@@ -1,5 +1,6 @@
 {{- $footer      := .Site.Params.footer }}
 {{- $logo        := index $footer "logo" }}
+{{- $subscribe   := .Site.Params.subscribe }}
 {{- $quickLinks  := index $footer "quicklinks" }}
 {{- $socialMedia := index $footer "socialmedia" }}
 {{- $bulmaLogo   := index $footer "bulmalogo" }}
@@ -9,8 +10,11 @@
     <div class="columns">
       <div class="column">
         <div class="footer-logo">
-          <img src="{{ printf "/images/logos/%s" $logo | relURL }}">
+          <img src="{{ printf "%s" $logo | relURL }}">
         </div>
+        {{ if $subscribe }}
+          {{ partial "subscribe.html" . }}
+        {{ end }}
       </div>
       {{- range $quickLinks }}
         <div class="column">

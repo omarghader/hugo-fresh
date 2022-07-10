@@ -13,7 +13,7 @@
 
     {{ block "main" . }}
       {{ partial "single/single.html" . }} 
-      {{ if.Params.include_footer }} 
+      {{ if or .Params.include_footer .Site.Params.include_footer}} 
         {{ partial "footer.html" . }}
       {{ end }}
 
