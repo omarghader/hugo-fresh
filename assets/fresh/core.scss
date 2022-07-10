@@ -25,6 +25,7 @@ Main SCSS file / Fresh
     .navbar-dropdown {
       display: none;
     }
+
     &.is-active {
       .navbar-dropdown {
         display: block;
@@ -34,8 +35,13 @@ Main SCSS file / Fresh
 }
 
 .fa-2xl {
-  font-size: 2em!important;
+  font-size: 2em !important;
 }
+
 .padding-275 {
   padding: 2.75em;
+}
+
+.mc-banner {
+  top: calc(100vh - 116px);
 }
