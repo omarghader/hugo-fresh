@@ -4,6 +4,7 @@
     {{ partial "meta.html" . }}
     <title>{{ .Title }} | {{ if .IsHome }} {{ .Site.Params.Subtitle }} {{ else }} {{ .Site.Title }}  {{ end }}</title>
     {{ partial "css.html" . }}
+    {{ partial "css-font.html" . }}
   </head>
   <body>
     <!-- Preloader -->
@@ -19,7 +20,6 @@
     {{ if .Site.Params.sidebar }} 
       {{ partial "sidebar.html" . }} 
     {{ end }}
-    {{ partial "css-font.html" . }}
     {{ partial "javascript.html" . }}
   </body>
 </html>

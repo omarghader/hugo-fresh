@@ -1,5 +1,5 @@
 {{- $fontName     := .Site.Params.font.name | default "Open Sans" }}
 {{- $fontFace     := replace $fontName " " "+" }}
 {{- $fontSizes    := delimit (.Site.Params.font.sizes | default (slice 300 400 600 700)) "," }}
-{{- $fontUrl      := printf "https://fonts.googleapis.com/css?family=%s:%s" $fontFace $fontSizes }}
+{{- $fontUrl      := printf "https://fonts.googleapis.com/css?family=%s:%s&display=swap" $fontFace $fontSizes }}
 <link href="{{ $fontUrl }}" rel="stylesheet">

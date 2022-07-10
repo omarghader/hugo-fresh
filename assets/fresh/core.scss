@@ -43,5 +43,6 @@ Main SCSS file / Fresh
 }
 
 .mc-banner {
-  top: calc(100vh - 116px);
+  top: calc(100vh - 116px) !important;
+
 }

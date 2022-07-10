@@ -10,7 +10,7 @@
     <div class="columns">
       <div class="column">
         <div class="footer-logo">
-          <img src="{{ printf "%s" $logo | relURL }}">
+          <img src="{{ printf "%s" $logo | relURL }}" alt="{{.Site.Title}}" width="112" height="28">
         </div>
         {{ if $subscribe }}
           {{ partial "subscribe.html" . }}
