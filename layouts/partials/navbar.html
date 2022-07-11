@@ -55,13 +55,13 @@
           {{- if .sublinks }}
           <div class="navbar-item has-dropdown is-hoverable">
             <div class="navbar-link">
-              {{ .title }}
+              {{ .title }} {{ if .tag }} <span class="ml-2 tag {{ .tag.color }}">{{ .tag.title }}</span> {{ end }}
             </div>
 
             <div class="navbar-dropdown">
               {{- range .sublinks }}
               <a href="{{ .url }}" class="navbar-item">
-                {{ .title }}
+                {{ .title }} {{ if .tag }} <span class="ml-2 tag {{ .tag.color }}">{{ .tag.title }}</span> {{ end }}
               </a>
               {{- end }}
             </div>
@@ -69,12 +69,12 @@
           {{- else if .button }}
           <a href="{{ .url }}" class="navbar-item">
             <span class="button signup-button rounded secondary-btn raised">
-              {{ .title }}
+              {{ .title }} {{ if .tag }} <span class="ml-2 tag {{ .tag.color }}">{{ .tag.title }}</span> {{ end }}
             </span>
           </a>
           {{- else }}
           <a href="{{ .url }}" class="navbar-item is-secondary">
-            {{ .title }}
+            {{ .title }} {{ if .tag }} <span class="ml-2 tag {{ .tag.color }}">{{ .tag.title }}</span> {{ end }}
           </a>
           {{- end }}
           {{- end }}
